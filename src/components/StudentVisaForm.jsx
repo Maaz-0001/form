@@ -138,6 +138,7 @@ function StudentVisaForm() {
               <option value="Islamabad">Islamabad</option>
               <option value="Lahore">Lahore</option>
               <option value="Karachi">Karachi</option>
+              <option value="Peshawar">Peshawar</option>
             </select>
             {errors.city && <p className={errorClass}>{errors.city}</p>}
           </div>
