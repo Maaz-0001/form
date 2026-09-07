@@ -15,6 +15,7 @@ function StudentVisaForm() {
     targetCountry: "",
     course: "",
     message: "",
+    yearOfEducation: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -34,6 +35,7 @@ function StudentVisaForm() {
     if (!formData.targetCountry.trim()) newErrors.targetCountry = "Target country is required";
     if (!formData.course.trim()) newErrors.course = "Course is required";
     if (!formData.message.trim()) newErrors.message = "Message is required";
+    if (!formData.yearOfEducation.trim()) newErrors.yearOfEducation = "Year of education is required";
     return newErrors;
   };
 
@@ -84,7 +86,7 @@ function StudentVisaForm() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="w-full max-w-2xl bg-white rounded-2xl shadow-xl p-8">
-        <h1 className="text-2xl font-bold text-gray-800 mb-1">Student Visa Application</h1>
+        <h1 className="text-2xl font-bold text-gray-800 mb-1">Student Assessment Form</h1>
         <p className="text-gray-500 mb-6">Fill in your details and we'll get in touch with you.</p>
 
         {submitted && (
@@ -147,6 +149,12 @@ function StudentVisaForm() {
             <label className={labelClass}>Last Degree</label>
             <input type="text" name="lastDegree" value={formData.lastDegree} onChange={handleChange} className={inputClass} placeholder="e.g. BSc, FSc" />
             {errors.lastDegree && <p className={errorClass}>{errors.lastDegree}</p>}
+          </div>
+
+          <div>
+            <label className={labelClass}>Year of Education</label>
+            <input type="text" name="yearOfEducation" value={formData.yearOfEducation} onChange={handleChange} className={inputClass} placeholder="e.g. 2020" />
+            {errors.yearOfEducation && <p className={errorClass}>{errors.yearOfEducation}</p>}
           </div>
 
           <div>
